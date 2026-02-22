@@ -32,7 +32,13 @@ php artisan key:generate
 ## Build the project
 
 ```
-docker build -t php:latest --file ./docker/Dockerfile --target php ./docker
+docker build -t php:latest --file ./docker/php/Dockerfile --target php ./docker
+```
+
+## Docker compose:
+```
+docker compose up -d
+docker compose down
 ```
 
 ## Create database schema
@@ -40,6 +46,12 @@ docker build -t php:latest --file ./docker/Dockerfile --target php ./docker
 ```
 docker exec -i php php artisan migrate
 ```
+
+## Seed fixures data
+````
+docker exec php php artisan db:seed
+````
+
 
 ## Run tests
 
