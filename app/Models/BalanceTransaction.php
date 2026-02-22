@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use EloquentTypeHinting;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,11 +12,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * BalanceTransaction model representing cryptocurrency balance transactions.
  *
+ * Расширенная модель с переопределенным Eloquent билдером
+ * @mixin EloquentTypeHinting
+ *
  * @property int $id
  * @property int $balance_id ID of the associated balance
  * @property string $tx_type Type of transaction (deposit, withdrawal, transfer, fee, bonus)
- * @property string $amount Transaction amount (high precision decimal)
- * @property string $running_balance Balance after this transaction was applied
+ * @property numeric-string $amount Transaction amount (high precision decimal)
+ * @property numeric-string $running_balance Balance after this transaction was applied
  * @property string|null $description Description/notes about the transaction
  * @property string|null $reference_id External transaction reference ID (e.g., blockchain tx hash)
  * @property string $status Transaction status (pending, completed, failed, reversed)

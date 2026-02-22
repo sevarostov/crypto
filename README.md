@@ -56,6 +56,6 @@ docker exec php php artisan db:seed
 ## Run tests
 
 ```
-docker exec -i php php artisan test
+docker exec -i php vendor/bin/phpunit
 ```
 

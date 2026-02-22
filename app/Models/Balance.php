@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use EloquentTypeHinting;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,12 +14,15 @@ use Illuminate\Support\Carbon;
 /**
  * Balance model representing user cryptocurrency balances.
  *
+ * Расширенная модель с переопределенным Eloquent билдером
+ * @mixin EloquentTypeHinting
+ *
  * @property int $id
  * @property int $user_id ID of the associated user
  * @property string $currency_code Currency code (e.g., BTC, ETH, USDT)
- * @property string $amount Total balance amount (high precision decimal)
- * @property string $available_amount Available balance for operations
- * @property string $frozen_amount Frozen/locked balance (for pending orders, holds, etc.)
+ * @property numeric-string $amount Total balance amount (high precision decimal) as a decimal string
+ * @property numeric-string $available_amount Available balance for operations as a decimal string
+ * @property numeric-string $frozen_amount Frozen/locked balance (for pending orders, holds, etc.) as a decimal string
  * @property Carbon $created_at
  * @property Carbon|null $updated_at
  *

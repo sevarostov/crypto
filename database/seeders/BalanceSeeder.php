@@ -48,7 +48,7 @@ class BalanceSeeder extends Seeder
 	 *
 	 * @return string Decimal number as string
 	 */
-	private function generateDecimal(float|int $min, float|int $max, int $decimalPlaces = 18): string
+	public function generateDecimal(float|int $min, float|int $max, int $decimalPlaces = 18): string
 	{
 		$scaledMin = (int)($min * 100);
 		$scaledMax = (int)($max * 100);
