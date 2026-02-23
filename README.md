@@ -52,6 +52,14 @@ docker exec -i php php artisan migrate
 docker exec php php artisan db:seed
 ````
 
+## Seed fixures data
+````
+docker exec php php artisan balance:accrue 2 25.5000000000000000 bonus --description=test --reference_id=12345_id
+docker exec php php artisan balance:write-off 1 1.0000000000000000 withdrawal --description="ATM withdrawal" --reference_id="TXN-54321"
+docker exec php php artisan balance:transfer 1 4 1.0000000000000000 --description="Monthly transfer"
+````
+
+
 
 ## Run tests
 

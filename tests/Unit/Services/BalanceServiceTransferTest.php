@@ -11,7 +11,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
-class BalanceServiceTest extends TestCase
+class BalanceServiceTransferTest extends TestCase
 {
 	use RefreshDatabase;
 
@@ -137,5 +137,7 @@ class BalanceServiceTest extends TestCase
 		// No transactions should have been created
 		$this->assertEquals(0, BalanceTransaction::count());
 	}
+
+
 
 }

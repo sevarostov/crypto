@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  *
  * Расширенная модель с переопределенным Eloquent билдером
  * @mixin EloquentTypeHinting
+ * @mixin Builder
  *
  * @property int $id
  * @property int $user_id ID of the associated user
@@ -75,8 +76,6 @@ class Balance extends Model
 		'created_at' => 'datetime',
 		'updated_at' => 'datetime',
 	];
-	private string $available_amount;
-	private string $frozen_amount;
 
 	/**
 	 * Get the user that owns the balance.
